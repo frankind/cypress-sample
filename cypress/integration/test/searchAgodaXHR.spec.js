@@ -25,4 +25,9 @@ describe('Test Agoda Search XHR', () => {
       expect(resp.ViewModelList[0].Name).to.be.equal('Bangkok')
     })
   })
+  it('Test fail screen shot', () => {
+    cy.visit('/')
+    cy.wait('@main')
+    cy.contains('frankind')
+  })
 })

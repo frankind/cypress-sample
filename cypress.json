@@ -9,7 +9,7 @@
   "viewportWidth": 1500,
   "viewportHeight": 1000,
   "defaultCommandTimeout": 4000,
-  "ignoreTestFiles": ["sample_*.js"],
+  "ignoreTestFiles": ["examples"],
   "screenshotsFolder": "mochawesome-report/assets",
   "videosFolder": "videos",
   "videoUploadOnPasses": false,
