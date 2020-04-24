@@ -1,0 +1,14 @@
+{
+  "plugins": ["cypress", "import", "prettier", "standard"],
+  "extends": ["plugin:cypress/recommended", "standard", "prettier", "prettier/standard"],
+  "env": {
+    "cypress/globals": true,
+    "node": true
+  },
+  "rules": {
+    "space-before-function-paren": 0,
+    "new-cap": 0,
+    "prettier/prettier": 2,
+    "arrow-parens": 2
+  }
+}

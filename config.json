@@ -1,0 +1,17 @@
+{
+  "reporterEnabled": "mocha-junit-reporter, mocha-allure-reporter, mochawesome",
+  "mochaJunitReporterReporterOptions": {
+    "mochaFile": "junit-results/junit-report.[hash].xml",
+    "testCaseSwitchClassnameAndName": true,
+    "toConsole": true,
+    "includePending": true,
+    "rootSuiteTitle": "cypress-sample"
+  },
+  "mochawesomeReporterOptions": {
+    "reportDir": "mochawesome-report",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  },
+  "screenshotsFolder": "mochawesome-report/assets"
+}

@@ -1,0 +1,15 @@
+/node_modules/
+.DS_Store
+.tmp
+.vscode/
+results/
+junit-results/
+result-videos/
+allure-results/
+mochawesome-report/
+test-report/
+allure-report/
+**.png
+**.mp4
+cypress/integration/examples/
+videos/
