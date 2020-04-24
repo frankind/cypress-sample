@@ -19,3 +19,17 @@ import './assertions'
 import 'cypress-dark'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+Cypress.on('test:after:run', (test, runnable) => {
+  // name to use in html file
+  if (test.state === 'failed') {
+    let testName = test.title
+    // File name cannot be contain ':' then we should remove it first
+    testName = testName.replace(/[:=/]/g, '')
+    if (testName.length > 51) {
+      testName = testName.substring(0, 50)
+    }
+    const screenshotFileName = `${testName} (failed).png`
+    const addContext = require('mochawesome/addContext')
+    addContext({ test }, `assets/${Cypress.spec.name}/${screenshotFileName}`)
+  }
+})
