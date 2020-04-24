@@ -2,6 +2,7 @@
 describe('Test Agoda Search XHR', () => {
   beforeEach(() => {
     cy.server()
+    cy.route('POST', 'https://www.agoda.com/api/en-us/Recommended/GetTopDestinations').as('main')
     cy.route('POST', 'https://www.agoda.com/api/en-us/Main/SendSearchRenderMessage').as(
       'searchRender'
     )
@@ -12,6 +13,7 @@ describe('Test Agoda Search XHR', () => {
   })
   it('Get XHR Request and Response', () => {
     cy.visit('/')
+    cy.wait('@main')
     cy.get('[data-selenium="textInput"]').click()
     cy.wait('@searchRender').then((xhr) => {
       const req = xhr.request.body
@@ -20,7 +22,6 @@ describe('Test Agoda Search XHR', () => {
     cy.get('[data-selenium="textInput"]').type('Bangkok')
     cy.wait('@searchBangkok').then((xhr) => {
       const resp = xhr.response.body
-      cy.log(`resp: ${resp}`)
       expect(resp.ViewModelList[0].Name).to.be.equal('Bangkok')
     })
   })
