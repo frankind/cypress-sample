@@ -1,0 +1,9 @@
+{
+  "testcase": [
+    {
+      "objective": "Search Bangkok",
+      "search": "Bangkok"
+    },
+    { "objective": "Search Pattaya", "search": "Pattaya" }
+  ]
+}

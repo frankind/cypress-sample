@@ -1,6 +1,7 @@
 {
   "baseUrl": "https://www.agoda.com/en-us/",
   "env": {
-    "infra": "beta"
+    "infra": "beta",
+    "testSearch": "testcase/searchThai.json"
   }
 }
