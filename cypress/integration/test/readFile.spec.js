@@ -18,8 +18,6 @@ describe('Test Agoda Search XHR', () => {
           'GET',
           `https://www.agoda.com/Search/Search/GetUnifiedSuggestResult/3/1/1/0/en-us/?searchText=${search}*`
         ).as('search')
-      })
-      it(`${objective}`, () => {
         cy.visit('/')
         cy.wait('@main')
         cy.get('[data-selenium="textInput"]').click()
@@ -27,6 +25,8 @@ describe('Test Agoda Search XHR', () => {
           const req = xhr.request.body
           expect(req.SearchTerm).to.be.equal('')
         })
+      })
+      it(`${objective}`, () => {
         cy.get('[data-selenium="textInput"]').type(search)
         cy.wait('@search').then((xhr) => {
           const resp = xhr.response.body
